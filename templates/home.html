@@ -9,9 +9,120 @@
         <link rel="stylesheet" href="static/css/home.css">
     </head>
     <body>
+<<<<<<< HEAD
+    <!--! Body 1-->
+    <div class="cus_profile">
+        <span>Customer Profile:</span><br>
+        <form action="" class="name_input">
+            <label for="cars">Name:</label>
+            <select name="cars" id="cars">
+              <option value="volvo">Bird</option>
+              <option value="saab">Eye</option>
+              <option value="opel">Got</option>
+              <option value="audi">Mew</option>
+              <option value="audi">Non</option>
+              <option value="audi">Pop</option>
+            </select>
+          </form>
+    </div>
+
+    <!--! Body 2 -->
+
+    <span>Recommend Items:</span>
+    <span class="selector">Model:
+        <select id="model_selector" name="model_types">
+            <option value="model_1">Model 1</option>
+            <option value="model_2">Model 2</option>
+            <option value="model_3">Model 3</option>
+            <option value="model_4">Model 4</option>
+         </select>
+    </span>
+    <div class="rec_box">
+
+        <div class="rec_items">
+            <button class="item" id="item_1" >
+                <img src="static/images/0233091003.jpg" alt="Nature" onclick='updateImage("static/0800818001.jpg");'>
+            </button>
+            <button class="item">
+                <img src="static/images/0337991001.jpg" alt="Nature" onclick="updateImage(this);">
+            </button>
+            <button class="item">
+                <img src="static/images/0370594006.jpg" alt="Nature" onclick="updateImage(this);">
+            </button>
+            <button class="item">
+                <img src="static/images/0372860052.jpg" alt="Nature" onclick="updateImage(this);">
+            </button>
+            <button class="item">
+                <img src="static/images/0800157001.jpg" alt="Nature" onclick="updateImage(this);">
+            </button>
+            <button class="item">
+                <img src="static/images/0800818001.jpg" alt="Nature" onclick="updateImage(this);">
+            </button>
+        </div>
+        <div class="rec_items">
+            <div class="item" >
+                <img src="static/images/0233091003.jpg" alt="Nature" onclick="updateImage(this);">
+            </div>
+            <div class="item">
+                <img src="static/images/0337991001.jpg" alt="Nature" onclick="updateImage(this);">
+            </div>
+            <div class="item">
+                <img src="static/images/0370594006.jpg" alt="Nature" onclick="updateImage(this);">
+            </div>
+            <div class="item">
+                <img src="static/images/0372860052.jpg" alt="Nature" onclick="updateImage(this);">
+            </div>
+            <div class="item">
+                <img src="static/images/0800157001.jpg" alt="Nature" onclick="updateImage(this);">
+            </div>
+            <div class="item">
+                <img src="static/images/0800818001.jpg" alt="Nature" onclick="updateImage(this);">
+            </div>
+        </div>
+    </div>
+    <!--! Body 3 -->
+    <br><br>
+    <span>Products related to selected item:</span>
+    <span class="selector"> Type:
+        <select id="sim_selector" name="sim_types">
+            <option value="post">Features</option>
+            <option value="engagement">Image</option>
+         </select>
+    </span>
+    <div class="item_item_box">
+        <div class="item_item">
+            <div class="relate_item" >
+                <img src="static/images/0233091015.jpg" alt="Nature">
+            </div>
+            <div class="relate_item">
+                <img src="static/images/0233091016.jpg" alt="Nature">
+            </div>
+            <div class="relate_item">
+                <img src="static/images/0233091019.jpg" alt="Nature">
+            </div>
+            <div class="relate_item">
+                <img src="static/images/0233091020.jpg" alt="Nature">
+            </div>
+            <div class="relate_item">
+                <img src="static/images/0233091021.jpg" alt="Nature">
+            </div>
+            <div class="relate_item">
+                <img src="static/images/0233091022.jpg" alt="Nature">
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        function updaateImage(a) {
+            document.getElementById("item_1").src=a.src;
+        }
+    </script>
+    <!--! JavaScript -->
+=======
     <!--! Header with Navigation Bar -->
     <header class="header">
             Recommender Project
+>>>>>>> parent of f176014 (Update Web templaates)
 
     </header>
     

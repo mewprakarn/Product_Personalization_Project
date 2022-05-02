@@ -39,7 +39,6 @@ app.config['SECRET_KEY'] = 'mykey'
 # def home():
 #     return render_template("home.html",account_dict=account_dict,update_date=update_date)
 
-def ranking_page():
 # @app.route('/ranking')
 # def ranking_page():
 #     return render_template("ranking.html",ranking_spec=ranking_data)
