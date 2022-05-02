@@ -35,9 +35,9 @@ app = Flask(__name__) # Set name of the app.
 app.config['SECRET_KEY'] = 'mykey'
 
 #*Render Template
-# @app.route('/')
-# def home():
-#     return render_template("home.html",account_dict=account_dict,update_date=update_date)
+@app.route('/')
+def home():
+    return render_template("home.html")
 
 # @app.route('/ranking')
 # def ranking_page():
