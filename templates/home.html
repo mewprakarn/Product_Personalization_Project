@@ -15,58 +15,60 @@
         <p class="sub_logo">Recommender</p>
     </header>
     <body>
-    <!--! Body 1-->
-    <div class="cus_profile">
-        <span>Customer Profile:</span><br>
-        <form action="" class="dropdown" id="name_input" method="POST">
-            <label for="name">Name:</label>
-            <select name="customers" id="customer">
-                {% for id,name in nameDict.items() %}
-	            <option value={{id}}>{{name}}</option>
-                {% endfor %}
-            </select>
-          </form>
-    </div>
-    <!--! Body 2 -->
-    <span>Recent Purchase:</span>
-    <div class="last_box">
-        <div class="last_items">
-            {% for item in last_items[:6] %}
-            <button class="item" id="item_1" >
-                <img src="static/images/{{item}}.jpg" alt="{{articles['prod_name'][articles.article_id==item].values[0]}}" onclick='updateImage("static/0800818001.jpg");'>
-            </button>
+    <!--! Body 1: Input Customer & Model-->
+    <form action="{{ url_for('home')}}"  class="dropdown" id="name_input" method="POST">
+        <span class="input">Input:</span><br>
+        <select name="customers" id="customer">
+            {% for id,name in nameDict.items() %}
+            <option value={{id}}>{{name}}</option>
             {% endfor %}
-        </div>
-    </div>   
-    <!--! Body 3 -->
-    <span>Recommend Items:</span>
-    <span class="selector">Model:
+        </select>
         <select id="model_selector" name="model_types">
             <option value="model_1">Model 1</option>
             <option value="model_2">Model 2</option>
             <option value="model_3">Model 3</option>
             <option value="model_4">Model 4</option>
-         </select>
-    </span>
+        </select>
+        
+        <button type="submit" class="btn btn-default">Submit</button>
+      </form><br>
+
+    <div class="cus_profile">
+        <span>Customer Profile:</span><br>
+        <span>Name: {{cus_name}}</span>
+          </form>
+    </div><br>
+    <!--! Body 2: Recent Purchase Items -->
+    <span>Recent Purchase:</span>
+    <div class="last_box">
+        <div class="last_items">
+            {% for item in last_items[:max_recent] %}
+            <button class="last_item">
+                <img src="static/images/{{item}}.jpg" alt="{{articles[item]}}">
+            </button>
+            {% endfor %}
+        </div>
+    </div>   
+    <!--! Body 3: Recommended Items-->
+    <span>Recommend Items:</span>
     <div class="rec_box">
         <div class="rec_items">
             {% for item in rec_items[:6] %}
             <button class="item" id="item_1" >
-                <img src="static/images/{{item}}.jpg" alt="{{articles['prod_name'][articles.article_id==item].values[0]}}" onclick='updateImage("static/0800818001.jpg");'>
+                <img src="static/images/{{item}}.jpg" alt="{{articles[item]}}">
             </button>
             {% endfor %}
         </div>
         <div class="rec_items">
             {% for item in rec_items[6:] %}
             <button class="item" id="item_1" >
-                <img src="static/images/{{item}}.jpg" alt="Nature" onclick='updateImage("static/0800818001.jpg");'>
+                <img src="static/images/{{item}}.jpg" alt="{{articles[item]}}">
             </button>
             {% endfor %}
             </div>
         </div>
     </div>
     <!--! Body 4 -->
-    <!-- <br><br>
     <span>Products related to selected item:</span>
     <span class="selector"> Type:
         <select id="sim_selector" name="sim_types">
@@ -76,29 +78,14 @@
     </span>
     <div class="item_item_box">
         <div class="item_item">
-            <div class="relate_item" >
-                <img src="static/images/0233091015.jpg" alt="Nature">
-            </div>
+            {% for item in rec_items[6:] %}
             <div class="relate_item">
-                <img src="static/images/0233091016.jpg" alt="Nature">
+                <img src="static/images/{{item}}.jpg" alt="{{articles[item]}}">
             </div>
-            <div class="relate_item">
-                <img src="static/images/0233091019.jpg" alt="Nature">
-            </div>
-            <div class="relate_item">
-                <img src="static/images/0233091020.jpg" alt="Nature">
-            </div>
-            <div class="relate_item">
-                <img src="static/images/0233091021.jpg" alt="Nature">
-            </div>
-            <div class="relate_item">
-                <img src="static/images/0233091022.jpg" alt="Nature">
-            </div>
+            {% endfor %}
         </div>
-    </div> -->
+    </div>
 
-
-    <!--! JavaScript -->
 
     </body>
 </html>

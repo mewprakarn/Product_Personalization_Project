@@ -3,7 +3,7 @@
 /* Variables */
 :root {
   --main_width: 960px; 
-  --main_height: 2000px; 
+  --main_height: 720px; 
   --font_color:white;
   --roboto_font:'Roboto',Helvetica, sans-serif;
   --helvetica_font:Helvetica, sans-serif;
@@ -67,8 +67,8 @@ body {
 }
 
 .dropdown {
-  padding-top: 1%;
-  padding-left: 5%;
+  padding-top: 0%;
+  padding-left: 0%;
 }
 
 
@@ -76,23 +76,37 @@ body {
 /** Recent Purchase Box */
 /** --------------------------------------------------------------------------- */
 .last_box {
-  height: 200px;
-  border-style: solid;
+  height: auto;
+  /* border-style: solid;
   border-width: 2px;
-  border-color: var(--grey_);
-
+  border-color: var(--grey_); */
   text-align: center;
 }
 
+.last_item {
+  float: left;
+  border: none;
+  outline: none;
+  width: 15%;
+  height: 133px;
+  padding: 10px;
+  background-color: transparent;
+}
+
+.last_item img {
+  /* opacity: 0.6; */
+  width: 100%;
+  height: 100%;
+}
 
 /** --------------------------------------------------------------------------- */
 /** Recommend Box */
 /** --------------------------------------------------------------------------- */
 .rec_box {
   height: 300px;
-  border-style: solid;
+  /* border-style: solid;
   border-width: 2px;
-  border-color: var(--grey_);
+  border-color: var(--grey_); */
 
   text-align: center;
 }
