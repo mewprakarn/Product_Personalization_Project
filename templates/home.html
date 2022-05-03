@@ -18,21 +18,27 @@
     <!--! Body 1-->
     <div class="cus_profile">
         <span>Customer Profile:</span><br>
-        <form action="" class="name_input">
-            <label for="cars">Name:</label>
-            <select name="cars" id="cars">
-              <option value="volvo">Bird</option>
-              <option value="saab">Eye</option>
-              <option value="opel">Got</option>
-              <option value="audi">Mew</option>
-              <option value="audi">Non</option>
-              <option value="audi">Pop</option>
+        <form action="" class="dropdown" id="name_input" method="POST">
+            <label for="name">Name:</label>
+            <select name="customers" id="customer">
+                {% for id,name in nameDict.items() %}
+	            <option value={{id}}>{{name}}</option>
+                {% endfor %}
             </select>
           </form>
     </div>
-
     <!--! Body 2 -->
-
+    <span>Recent Purchase:</span>
+    <div class="last_box">
+        <div class="last_items">
+            {% for item in last_items[:6] %}
+            <button class="item" id="item_1" >
+                <img src="static/images/{{item}}.jpg" alt="{{articles['prod_name'][articles.article_id==item].values[0]}}" onclick='updateImage("static/0800818001.jpg");'>
+            </button>
+            {% endfor %}
+        </div>
+    </div>   
+    <!--! Body 3 -->
     <span>Recommend Items:</span>
     <span class="selector">Model:
         <select id="model_selector" name="model_types">
@@ -43,50 +49,24 @@
          </select>
     </span>
     <div class="rec_box">
-
         <div class="rec_items">
+            {% for item in rec_items[:6] %}
             <button class="item" id="item_1" >
-                <img src="static/images/0233091003.jpg" alt="Nature" onclick='updateImage("static/0800818001.jpg");'>
+                <img src="static/images/{{item}}.jpg" alt="{{articles['prod_name'][articles.article_id==item].values[0]}}" onclick='updateImage("static/0800818001.jpg");'>
             </button>
-            <button class="item">
-                <img src="static/images/0337991001.jpg" alt="Nature" onclick="updateImage(this);">
-            </button>
-            <button class="item">
-                <img src="static/images/0370594006.jpg" alt="Nature" onclick="updateImage(this);">
-            </button>
-            <button class="item">
-                <img src="static/images/0372860052.jpg" alt="Nature" onclick="updateImage(this);">
-            </button>
-            <button class="item">
-                <img src="static/images/0800157001.jpg" alt="Nature" onclick="updateImage(this);">
-            </button>
-            <button class="item">
-                <img src="static/images/0800818001.jpg" alt="Nature" onclick="updateImage(this);">
-            </button>
+            {% endfor %}
         </div>
         <div class="rec_items">
-            <div class="item" >
-                <img src="static/images/0233091003.jpg" alt="Nature" onclick="updateImage(this);">
-            </div>
-            <div class="item">
-                <img src="static/images/0337991001.jpg" alt="Nature" onclick="updateImage(this);">
-            </div>
-            <div class="item">
-                <img src="static/images/0370594006.jpg" alt="Nature" onclick="updateImage(this);">
-            </div>
-            <div class="item">
-                <img src="static/images/0372860052.jpg" alt="Nature" onclick="updateImage(this);">
-            </div>
-            <div class="item">
-                <img src="static/images/0800157001.jpg" alt="Nature" onclick="updateImage(this);">
-            </div>
-            <div class="item">
-                <img src="static/images/0800818001.jpg" alt="Nature" onclick="updateImage(this);">
+            {% for item in rec_items[6:] %}
+            <button class="item" id="item_1" >
+                <img src="static/images/{{item}}.jpg" alt="Nature" onclick='updateImage("static/0800818001.jpg");'>
+            </button>
+            {% endfor %}
             </div>
         </div>
     </div>
-    <!--! Body 3 -->
-    <br><br>
+    <!--! Body 4 -->
+    <!-- <br><br>
     <span>Products related to selected item:</span>
     <span class="selector"> Type:
         <select id="sim_selector" name="sim_types">
@@ -115,13 +95,9 @@
                 <img src="static/images/0233091022.jpg" alt="Nature">
             </div>
         </div>
-    </div>
+    </div> -->
 
-    <script type="text/javascript">
-        function updaateImage(a) {
-            document.getElementById("item_1").src=a.src;
-        }
-    </script>
+
     <!--! JavaScript -->
 
     </body>

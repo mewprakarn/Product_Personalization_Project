@@ -3,7 +3,7 @@
 /* Variables */
 :root {
   --main_width: 960px; 
-  --main_height: 720px; 
+  --main_height: 2000px; 
   --font_color:white;
   --roboto_font:'Roboto',Helvetica, sans-serif;
   --helvetica_font:Helvetica, sans-serif;
@@ -60,15 +60,28 @@ body {
   height: var(--main_height);
   margin: auto;
   /* padding: 0% 20px 0% 20px; */
-  border-style: solid;
+  /* border-style: solid;
   border-width: 3px;
-  border-color: var(--dark);
+  border-color: var(--dark); */
     font-family: Helvetica, sans-serif;
 }
 
-.name_input {
+.dropdown {
   padding-top: 1%;
   padding-left: 5%;
+}
+
+
+/** --------------------------------------------------------------------------- */
+/** Recent Purchase Box */
+/** --------------------------------------------------------------------------- */
+.last_box {
+  height: 200px;
+  border-style: solid;
+  border-width: 2px;
+  border-color: var(--grey_);
+
+  text-align: center;
 }
 
 
