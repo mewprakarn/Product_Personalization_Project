@@ -24,7 +24,9 @@
 p,h3,img,span {
   background-color: transparent;
 }
-
+p{
+  margin:0%;
+}
 /** --------------------------------------------------------------------------- */
 /** Header */
 /** --------------------------------------------------------------------------- */
@@ -103,7 +105,7 @@ body {
 /** Recommend Box */
 /** --------------------------------------------------------------------------- */
 .rec_box {
-  height: 300px;
+  height: auto;
   /* border-style: solid;
   border-width: 2px;
   border-color: var(--grey_); */
@@ -159,7 +161,7 @@ body {
 .relate_item {
   float: left;
   border: none;
-  outline: none;
+  /* outline: none; */
   width: 15%;
   height: 133px;
   padding: 10px;

@@ -50,7 +50,8 @@
         </div>
     </div>   
     <!--! Body 3: Recommended Items-->
-    <span>Recommend Items:</span>
+    
+    <p>Recommend Items:</p>
     <div class="rec_box">
         <div class="rec_items">
             {% for item in rec_items[:6] %}
@@ -69,13 +70,14 @@
         </div>
     </div>
     <!--! Body 4 -->
-    <span>Products related to selected item:</span>
-    <span class="selector"> Type:
+    <!-- <span class="selector"> Type:
         <select id="sim_selector" name="sim_types">
             <option value="post">Features</option>
             <option value="engagement">Image</option>
          </select>
-    </span>
+    </span> -->
+    <!-- <br>
+    <span>Products related to selected item:</span>
     <div class="item_item_box">
         <div class="item_item">
             {% for item in rec_items[6:] %}
@@ -84,7 +86,7 @@
             </div>
             {% endfor %}
         </div>
-    </div>
+    </div> -->
 
 
     </body>
