@@ -1,9 +1,9 @@
 from flask import Flask, render_template, request, session, flash, json, jsonify
 from flask_wtf import FlaskForm
-from wtforms import TextField,TextAreaField, SubmitField, BooleanField, RadioField, SelectField
-from wtforms import validators
-from wtforms.validators import DataRequired
-from flask_bootstrap import Bootstrap
+# from wtforms import TextField,TextAreaField, SubmitField, BooleanField, RadioField, SelectField
+# from wtforms import validators
+# from wtforms.validators import DataRequired
+# from flask_bootstrap import Bootstrap
 
 import json
 import pandas as pd
