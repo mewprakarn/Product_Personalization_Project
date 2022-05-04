@@ -41,9 +41,12 @@ app.config['SECRET_KEY'] = 'mykey'
 @app.route('/', methods=['GET','POST'])
 def home():
     if request.method == "POST":
+        # get customer_id & model from dropdown
         select = request.form.get('customers')
-        temp_pred2 = prediction['prediction'][prediction.customer_id == select].values[0]
-        temp_recent2 = prediction['recent_purchase'][prediction.customer_id == select].values[0]
+        model = request.form.get('model_types')
+        # filter data to update back to website
+        temp_pred2 = prediction['prediction'][(prediction.customer_id == select)&(prediction.model==model)].values[0]
+        temp_recent2 = prediction['recent_purchase'][(prediction.customer_id == select)&(prediction.model==model)].values[0]
         max_recent2 = min([len(temp_recent2),6])  
         cus_name2 = customers['name'][customers.customer_id == select].values[0]
         print(select)

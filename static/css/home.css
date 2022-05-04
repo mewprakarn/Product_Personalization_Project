@@ -78,11 +78,13 @@ body {
 /** Recent Purchase Box */
 /** --------------------------------------------------------------------------- */
 .last_box {
+  width: var(--main_width);
   height: auto;
+  display: block;
   /* border-style: solid;
   border-width: 2px;
   border-color: var(--grey_); */
-  text-align: center;
+  /* text-align: center; */
 }
 
 .last_item {
@@ -105,12 +107,12 @@ body {
 /** Recommend Box */
 /** --------------------------------------------------------------------------- */
 .rec_box {
+  width: var(--main_width);
   height: auto;
   /* border-style: solid;
   border-width: 2px;
   border-color: var(--grey_); */
-
-  text-align: center;
+  display: block;
 }
 .selector {
   float: right;
