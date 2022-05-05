@@ -75,7 +75,9 @@ body {
   margin-bottom: 0px;
   padding: 0% 15% 0% 15%;
 }
-
+.intro a{
+  color: var(--red_);
+}
 .input {
   display: flex;
   justify-content: space-between;
@@ -90,6 +92,7 @@ body {
 .dropdown select{
   border-style: solid;
   border-width: 2px;
+  border-radius: 5px;
   border-color: var(--grey_);
   font-size: 18px;
 }

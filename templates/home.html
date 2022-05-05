@@ -20,7 +20,7 @@
     <!--! Body 0: Intro--> 
     <div class="intro">
         <h6>ABOUT</h6>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi dolor est labore vitae tempore? Beatae perspiciatis excepturi magnam velit esse architecto tenetur culpa eligendi! Sint odit aliquam optio ut quod!</p>
+        <p>H&M Group invites us to develop product recommendations based on data from previous transactions, as well as from customer and product meta data. For reference, please visits <a href=""https://www.kaggle.com/competitions/h-and-m-personalized-fashion-recommendations/overview>kaggle.com</a></p>
     </div>
 
     <!--! Body 1: Input Customer & Model-->
@@ -37,11 +37,6 @@
                 {% for mod in model_list %}
                 <option value="{{mod}}">{{mod}}</option>
                 {% endfor %}
-                <!-- <option value="ALS Model">ALS</option>
-                <option value="Ranking Factorization">Ranking Factorization</option>
-                <option value="User-User Similarity">User-User Similarity</option>
-                <option value="Item-Item Similarity">Item-Item Similarity</option>
-                <option value="Image Similarity">Image Similarity</option> -->
             </select>
             
             <button type="submit" class="btn btn-default" id="submit">Submit</button>
