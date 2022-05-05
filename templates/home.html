@@ -11,7 +11,9 @@
     </head>
     <!--! Header -->
     <header>
-        <p class="logo">M&M</p>
+        <p class="logo">
+            <img src="static/images/hm-logo-1.png" alt="logo">
+        </p>
         <p class="sub_logo">Recommender</p>
     </header>
     <body>
@@ -26,20 +28,23 @@
         <form action="{{ url_for('home')}}"  class="dropdown" id="name_input" method="POST">
             <!-- <span class="input">Input:</span><br> -->
             <select name="customers" id="customer">
-                <!-- <option value={{id}}>--select customer--</option> -->
-                {% for id,name in nameDict.items() %}
-                <option value={{id}}>{{name}}</option>
+                <!-- <option value={{id}}>{{cus_name}}</option> -->
+                {% for name in name_list%}
+                <option value={{nameDict[name]}}>{{name}}</option>
                 {% endfor %}
             </select>
             <select id="model_selector" name="model_types">
-                <option value="ALS Model">ALS</option>
-                <option value="Ranking Factorization Model">Ranking Factorization</option>
-                <option value="User-User Similarity Model">User-User Similarity</option>
-                <option value="Item-Item Similarity Model">Item-Item Similarity</option>
-                <option value="Image Similarity Model">Image Similarity</option>
+                {% for mod in model_list %}
+                <option value="{{mod}}">{{mod}}</option>
+                {% endfor %}
+                <!-- <option value="ALS Model">ALS</option>
+                <option value="Ranking Factorization">Ranking Factorization</option>
+                <option value="User-User Similarity">User-User Similarity</option>
+                <option value="Item-Item Similarity">Item-Item Similarity</option>
+                <option value="Image Similarity">Image Similarity</option> -->
             </select>
             
-            <button type="submit" class="btn btn-default">Submit</button>
+            <button type="submit" class="btn btn-default" id="submit">Submit</button>
         </form><br>
 
         <div class="cus_profile">
@@ -91,5 +96,7 @@
         </div>
 
     </div>
+
+
     </body>
 </html>

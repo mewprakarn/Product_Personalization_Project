@@ -39,10 +39,13 @@
     font-size: 60px;
     line-height: 0.8;
   }
-
+  .logo img{
+    height: 15%;
+    width: 15%;
+  }
 .sub_logo {
     margin-top: 0px;
-    margin-left: 4px;
+    margin-left: 0px;
     padding: 0px;
     color: var(--grey_);
     text-align: center;  
@@ -94,6 +97,7 @@ body {
   font-size: 18px;
   color: #ffffff;
   background-color: #cc071e;
+  border-radius: 10px;
 }
 .cus_profile{
   padding-top: 0%;
