@@ -17,7 +17,7 @@ customers = pd.read_csv('static/model/customers_v2.csv')
 nameDict = dict(zip(customers['name'],customers['customer_id']))
 name_list = list(customers['name'])
 
-prediction = pd.read_csv('static/model/prediction.csv')
+prediction = pd.read_csv('static/model/prediction_v2.csv')
 prediction['prediction'] = prediction['prediction'].apply(lambda x: x.split())
 prediction['recent_purchase'] = prediction['recent_purchase'].apply(lambda x: x.split())
 prediction['actual'] = prediction['actual'].apply(lambda x: x.split())
@@ -31,7 +31,8 @@ max_actual = min([len(temp_actual),6])
 
 
 
-model_list = ['ALS','Ranking Factorization','User-User Similarity','Item-Item Similarity','Image Similarity']
+# model_list = ['ALS','Ranking Factorization','User-User Similarity','Item-Item Similarity','Image Similarity']
+model_list = ['ALS','User-User (One-hot)','User-User (Count)','Item-Item Similarity','Image Similarity']
 model = 'ALS Model'
 
 
@@ -59,7 +60,8 @@ def home():
         name_list2 = name_list
         name_list2.insert(0, name_list2.pop(name_list2.index(new_name)))
 
-        model_list2 = ['ALS','Ranking Factorization','User-User Similarity','Item-Item Similarity','Image Similarity']
+        # model_list2 = ['ALS','Ranking Factorization','User-User Similarity','Item-Item Similarity','Image Similarity']
+        model_list2 = ['ALS','User-User (One-hot)','User-User (Count)','Item-Item Similarity','Image Similarity']
         model_list2.insert(0, model_list2.pop(model_list2.index(model_select)))
         model2 = model_select + ' Model'
 
